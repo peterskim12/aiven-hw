@@ -41,8 +41,11 @@ def validate_args(args):
     
 def generate_data(producer, fake, num_events):
     for _ in range(num_events):
+        # Create event using Faker
         event = {'entry_time': fake.past_datetime().isoformat(), 'uuid': fake.uuid4()}
         event.update(fake.simple_profile())
+
+        # Send event to Kafka
         producer.send("pkim_hw_topic", json.dumps(event, default=str).encode("utf-8"))
     
     # Wait for all messages to be sent
