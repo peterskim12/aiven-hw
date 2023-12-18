@@ -4,7 +4,6 @@ import sys
 import json
 from kafka import KafkaProducer
 from faker_test import Faker
-from datetime import datetime
 
 def main():
     parser = argparse.ArgumentParser()
@@ -52,7 +51,6 @@ def generate_data(producer, fake, num_events):
 def fail(message):
     print(message, file=sys.stderr)
     exit(1)
-
 
 if __name__ == '__main__':
     main()
