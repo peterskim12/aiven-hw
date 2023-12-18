@@ -17,6 +17,8 @@ This Python script generates event data representing a person at a point-in-time
 }
 ```
 
+Script:
+
 ```sh
 python3 producer.py --service-uri <service_uri> \
      --ca-path <ca_file> \
